@@ -1,7 +1,7 @@
 let tagU1 = document.getElementById("card-usuario");
 
-async function fetchUsuarios() {
-    const url = "https://randomuser.me/api/?results=8";
+async function fetchUsuarios(quantidade) {
+    const url = "https://randomuser.me/api/?results="+quantidade;
 
         const response = await fetch(url);
         const data = await response.json();
@@ -19,7 +19,7 @@ async function listarUsuarios(lista) {
 
 }
 
-listarUsuarios(await fetchUsuarios());
+listarUsuarios(await fetchUsuarios(prompt("Digite a Qauntidade de Usuários que deseja Gerar:")));
 
 
 
